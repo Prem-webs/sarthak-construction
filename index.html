@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sarthak Construction</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #fefefe;
+      color: #2c3e50;
+    }
+
+    header {
+      background: linear-gradient(to right, #2c3e50, #34495e);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      background: #facc15;
+      color: #2c3e50;
+      padding: 5px 12px;
+      border-radius: 50%;
+      margin-right: 15px;
+      animation: bounce 1.2s infinite alternate;
+    }
+
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-5px); }
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    nav {
+      background-color: #1e293b;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #facc15;
+    }
+
+    .hero {
+      background-image: url('https://source.unsplash.com/1600x600/?building,construction');
+      background-size: cover;
+      background-position: center;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      animation: fadeIn 2s ease;
+    }
+
+    .hero h2 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      color: #facc15;
+      text-shadow: 1px 1px 5px black;
+    }
+
+    .hero span {
+      font-size: 1rem;
+      margin-top: 4px;
+      color: #0f0f10;
+      text-shadow: 1px 1px 4px black;
+    }
+
+    .intro-text {
+      text-align: center;
+      background-color: #f9fafb;
+      padding: 25px 15px 10px;
+    }
+
+    .intro-text h1 {
+      font-size: 2rem;
+      color: #1e3a8a;
+      margin-bottom: 8px;
+    }
+
+    .intro-text p {
+      font-size: 1.1rem;
+      color: #64748b;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #1d4ed8;
+    }
+
+    .section p.subheading {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .services, .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .service, .gallery img {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 280px;
+      transition: transform 0.3s ease;
+    }
+
+    .service:hover, .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery img {
+      padding: 0;
+      width: 280px;
+      height: 180px;
+      object-fit: cover;
+      border: 3px solid #f1f1f1;
+    }
+
+    /* CONTACT BOX STYLE */
+    .contact-box {
+      background-color: #e0ecff;
+      padding: 30px;
+      margin: 40px 20px;
+      border-radius: 15px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .contact-info h2 {
+      color: #0b4aa6;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .contact-info p {
+      font-size: 1.1rem;
+      margin: 8px 0;
+      color: #111;
+    }
+
+    .contact-info a {
+      color: #1e40af;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    .contact-image {
+      flex-shrink: 0;
+      margin-top: 20px;
+    }
+
+    .contact-image img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #cbd5e1;
+    }
+
+    footer {
+      background-color: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .services,
+      .gallery {
+        display: none;
+      }
+
+      .contact-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .contact-image {
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">SC</div>
+    <h1>Sarthak Construction</h1>
+    
+  </header>
+
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+<section class="hero">
+    <h2>Building Dreams with Strength</h2>
+    <span>Trusted name in residential & commercial construction</span>
+  </section>
+<section class="section" id="services">
+    <h2>Our Services</h2>
+    <p class="subheading">We provide end-to-end construction solutions tailored to your needs.</p>
+    <div class="services">
+      <div class="service">
+        <h3>Residential Construction</h3>
+        <p>Custom home builds, renovations and repairs.</p>
+      </div>
+      <div class="service">
+        <h3>Commercial Projects</h3>
+        <p>Offices, shops, industrial spaces and more.</p>
+      </div>
+      <div class="service">
+        <h3>Interior Work</h3>
+        <p>Modern, functional interiors designed and delivered.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <h2>Work Gallery</h2>
+    <p class="subheading">Take a look at some of our recent projects and construction excellence.</p>
+    <div class="gallery">
+      <img src="hh1.jpg" alt="Site 1" />
+      <img src="hh2.jpg" alt="Interior" />
+      <img src="hh3.jpg" alt="Worker" />
+      <img src="hh4.jpg" alt="House" />
+    </div>
+  </section>
+
+  <!-- Contact Box Section (New Style) -->
+  <section class="contact-box" id="contact">
+    <div class="contact-container">
+      <div class="contact-info">
+        <h2>Contact Information</h2>
+        <p><strong>Phone:</strong> <a href="tel:+91 9764843792">+91 9764843792 📞 Call</a><a href="tel:+91 8530557173">+91 8530557173 📞 Call</a></p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/919764843792" target="_blank">+91 9764843792 💬 WhatsApp</a></p>
+        <p><strong>Email:</strong> ganeshkumawat@gmail.com</p>
+        <p><strong>Location:</strong> Chh. Sambhaji Nagar, Maharashtra</p>
+      </div>
+      <div class="contact-image">
+        <img src="g1.jpg" alt="Profile Photo" />
+      </div>
+    </div>
+  </section>
+
+  <footer>
+   © Ganesh kumawat || owner  2025
+   <br>
+     Developed by Prem Naik © 2025
+  </footer>
+
+</body>
+</html>
